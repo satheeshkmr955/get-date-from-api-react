@@ -1,28 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Paper from '@material-ui/core/Paper';
+import React from "react";
+import PropTypes from "prop-types";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Paper from "@material-ui/core/Paper";
 
-const DateDisplay = (() => (
+const DateDisplay = props => (
   <Paper className="container">
-      <List>
-          <ListItem>
-          <ListItemText>Day: </ListItemText>
+    <List>
+      <ListItem>
+        <ListItemText>
+          Day: {props.apiResponse ? new Date(props.apiResponse).getDate() : ""}
+        </ListItemText>
       </ListItem>
       <ListItem>
-          <ListItemText>Month: </ListItemText>
+        <ListItemText>
+          Month:{" "}
+          {props.apiResponse ? new Date(props.apiResponse).getMonth() : ""}
+        </ListItemText>
       </ListItem>
       <ListItem>
-          <ListItemText>Year: </ListItemText>
+        <ListItemText>
+          Year:{" "}
+          {props.apiResponse ? new Date(props.apiResponse).getFullYear() : ""}
+        </ListItemText>
       </ListItem>
-      </List>
+    </List>
   </Paper>
-));
+);
 
 DateDisplay.propTypes = {
   apiResponse: PropTypes.string
-}
+};
 
 export default DateDisplay;
