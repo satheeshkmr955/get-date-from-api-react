@@ -6,7 +6,7 @@ export default {
     return axios
       .get(DATE_JSON_URL)
       .then(function(res) {
-        return res.data;
+        return res.data.date;
       })
       .catch(function(err) {
         console.log(err);

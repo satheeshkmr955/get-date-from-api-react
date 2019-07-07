@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 const DateButton = props => (
   <div className="button-container">
     <Button variant="extendedFab" onClick={props.onClickButton} color="primary">
-      DISPLAY DATE
+      Display Date
     </Button>
   </div>
 );
